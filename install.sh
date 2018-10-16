@@ -161,7 +161,7 @@ fi
 if [[ "$INSTALL_EMACS" == true ]]; then
     echo "--> Installing emacs"
     cd
-    sudo apt install make gcc libgtk-3-dev libgnutls-dev libxpm-dev libjpeg-dev libgif-dev libtiff-dev libncurses-dev
+    sudo apt install make gcc libgtk-3-dev libgnutls-dev libxpm-dev libjpeg-dev libgif-dev libtiff-dev libncurses-dev xorg-dev
     wget https://ftp.gnu.org/gnu/emacs/emacs-26.1.tar.gz
     tar xvzf emacs-26.1.tar.gz
     cd emacs-26.1
