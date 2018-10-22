@@ -119,6 +119,7 @@ alias gron="git rebase --onto"
 alias grc="git rebase --continue"
 alias gutc="gut && grc"
 alias gupdate="gut"
+alias gunlock='cd $(git rev-parse --show-toplevel) && rm .git/index.lock'
 alias gd="git diff"
 alias gdf="git dsf"
 alias gdfc="git dsf --cached"
