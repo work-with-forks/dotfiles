@@ -95,6 +95,7 @@ alias agl="dpkg --get-selections | grep -v deinstall"
 #
 alias gs="git status"
 alias gl="git log"
+alias glpf="git log --pretty=fuller"
 alias glp="git log -p"
 alias gln="git log --name-only"
 alias gls="git log --stat"
