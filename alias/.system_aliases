@@ -52,6 +52,7 @@ alias gdbtui="gdb -tui"
 alias c="xclip -sel clip"
 alias v="xclip -o"
 alias m5="md5sum"
+alias sck="shellcheck"
 
 # Dotfiles
 alias brc="em ~/.bashrc"
