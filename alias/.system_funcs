@@ -42,6 +42,11 @@ gla() {
   printf "$cmd\n\n"; eval $cmd
 }
 
+glSa() {
+  cmd="git log -S $1 --stat --author=${2:-$(whoami)}"
+  printf "$cmd\n\n"; eval $cmd
+}
+
 git-retag() {
   cmd="git tag -d $1 && git push origin $1 --delete && git tag $1 && git push origin $1"
   echo -n "Exec '$cmd' [y/n]? "
