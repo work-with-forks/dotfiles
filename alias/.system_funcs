@@ -73,3 +73,19 @@ gcfu() {
     echo "Wrong number of args"
   fi
 }
+
+gDb() {
+  local lcmd="git branch -D $(git rev-parse --abbrev-ref HEAD)"
+  local rcmd="git push origin $(git rev-parse --abbrev-ref HEAD) --delete"
+  if [[ "$#" -gt 1 ]]; then
+     echo "Usage: gDb (r|l|lr|rl)"
+  fi
+  case "${1:-r}" in
+      l) echo "$lcmd" && eval "$lcmd" ;;
+      r) echo "$rcmd" && eval "$rcmd" ;;
+      lr|rl)
+         echo "$lcmd\n$rcmd" && eval "$lcmd" && eval "$rcmd" ;;
+  esac
+}
+
+}
