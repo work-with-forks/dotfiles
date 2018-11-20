@@ -59,7 +59,7 @@ windows:
   - "[-_-] sys":
       layout: 9df6,191x55,0,0[191x33,0,0{88x33,0,0,3,102x33,89,0,9},191x21,0,34{88x21,0,34,10,102x21,89,34,11}]
       panes:
+        - dmesg -w
+        - gtop
         - tty-clock -c -t
-        - htop
-        - screenfetch
         - ncdu
