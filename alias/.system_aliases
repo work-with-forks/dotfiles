@@ -140,6 +140,7 @@ alias gc-="git checkout -"
 alias gc~="git checkout HEAD~"
 alias gc~~="git checkout HEAD~~"
 alias gcb="git checkout -b"
+alias glz='git log $(git branch --sort="-authordate" | fzy)'
 alias gcz='git checkout $(git branch --sort="-authordate" | fzy)'
 alias gczr='git checkout $(git branch -r | fzy)'
 alias gci="git commit"
