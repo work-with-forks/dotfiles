@@ -54,6 +54,7 @@ alias c="xclip -sel clip"
 alias v="xclip -o"
 alias m5="md5sum"
 alias sck="shellcheck"
+alias mcc="pmccabe -v"
 
 # Dotfiles
 alias brc="em ~/.bashrc"
