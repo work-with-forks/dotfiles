@@ -119,7 +119,7 @@ if [[ "$INSTALL_BSPWM" == true ]]; then
     git clone https://github.com/baskerville/bspwm.git
     echo "Cloning sxhkd"
     git clone https://github.com/baskerville/sxhkd.git
-    sudo apt-get install xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev
+    sudo apt-get install xcb libxcb-util0-dev libxcb-ewmh-dev libxcb-randr0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-xinerama0-dev libasound2-dev libxcb-xtest0-dev libxcb-shape0-dev
     echo "Building bspwm"
     cd bspwm && make && sudo make install
     sudo cp contrib/freedesktop/bspwm.desktop /usr/share/xsessions/
