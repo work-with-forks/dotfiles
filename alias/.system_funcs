@@ -60,9 +60,9 @@ git-retag() {
 
 gshf() {
   if [ "$#" -eq 2 ]; then
-    local file=$(git ls-tree -r $1 --name-only | rg "$2" | rg '\.c$|\.h$|\.cpp$|\.hpp$|\.py' | fzy)
+    local file=$(git ls-tree -r "$1" --name-only | rg "$2" | rg '\.c$|\.h$|\.cpp$|\.hpp$|\.py' | fzy)
     local cmd="git show $1:./${file}"
-    echo $cmd && eval $cmd
+    echo "$cmd" && eval "$cmd"
   else
     echo "Usage: gshf <hash> <filename>"
   fi
