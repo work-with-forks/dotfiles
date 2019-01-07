@@ -181,7 +181,7 @@ alias gbi="git bisect"
 alias gbist="git bisect start"
 alias gbisp="git bisect stop"
 alias gmb="git merge-base"
-alias gsr="gsrr"
+alias gsr="gspr"
 
 # Misc
 alias p?='echo $PATH'
