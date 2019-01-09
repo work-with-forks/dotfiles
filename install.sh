@@ -110,6 +110,10 @@ if [[ "$INSTALL_UTILS" == true ]]; then
     echo "Installing prettyping"
     wget https://github.com/denilsonsa/prettyping/raw/master/prettyping
     chmod +x prettyping && mv prettyping /usr/local/bin/prettyping
+
+    echo "Installing hecate"
+    wget https://github.com/evanmiller/hecate/releases/download/v0.0.1/hecate_0.0.1_amd64.deb
+    sudo dpkg -i hecate_0.0.1_amd64.deb
 fi
 
 ### BSPWM ###
