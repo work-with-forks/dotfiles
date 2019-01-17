@@ -136,3 +136,30 @@ gspr(){
     git pull --rebase
   fi
 }
+
+grrauth() {
+  if [ "$#" -gt 0 ]; then
+    export OLD_EMAIL="${1:-$(git config user.email)}"
+    export CORRECT_EMAIL="${2:-$(git config user.email)}"
+    export CORRECT_NAME="${3:-$(git config user.name)}"
+    echo "Set commits with email \"$OLD_EMAIL\" to author/committer:"
+    echo "\"$CORRECT_NAME <$CORRECT_EMAIL>\"? [Y]es/[N]o"
+    read REPLY
+    if [[ $REPLY =~ ^[Yy] ]]; then
+      git filter-branch -f --env-filter \
+      'if [ "$GIT_COMMITTER_EMAIL" = "${OLD_EMAIL}" ]
+      then
+          export GIT_COMMITTER_NAME="${CORRECT_NAME}"
+          export GIT_COMMITTER_EMAIL="${CORRECT_EMAIL}"
+      fi
+      if [ "$GIT_AUTHOR_EMAIL" = "${OLD_EMAIL}" ]
+      then
+          export GIT_AUTHOR_NAME="${CORRECT_NAME}"
+          export GIT_AUTHOR_EMAIL="${CORRECT_EMAIL}"
+      fi' --tag-name-filter cat -- --branches --tags
+    fi
+  else
+    echo "Usage: grrauth <old email>"
+    echo "       grrauth <old email> <new email> <new name>"
+  fi
+}
