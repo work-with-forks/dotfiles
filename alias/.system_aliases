@@ -182,6 +182,8 @@ alias gbi="git bisect"
 alias gbist="git bisect start"
 alias gbisp="git bisect stop"
 alias gmb="git merge-base"
+alias gcan="git commit --amend --no-edit"
+alias gcanfp="git commit --amend --no-edit && git push origin master -f"
 alias gsr="gspr"
 
 # Misc
