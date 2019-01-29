@@ -27,10 +27,12 @@ super + e
 super + p
     scrot
 
-
 # Blur and lock screen
 super + b
     ~/.i3/py3lock.py
+
+super + shift + b
+    /usr/bin/glitchlock
 
 # exit
 super + F4
