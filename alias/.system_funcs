@@ -164,3 +164,12 @@ grrauth() {
     echo "       grrauth <old email> <new email> <new name>"
   fi
 }
+
+gcrz() {
+  local branch="$(git branch -r | fzy)"
+  # Remove "origin/" and whitespace
+  branch="${branch/origin\//}"
+  branch="${branch//[[:space:]]/}"
+  cmd="git checkout $branch"
+  echo "$cmd" && eval "$cmd"
+}
