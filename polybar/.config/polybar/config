@@ -312,10 +312,12 @@ date-alt = " %Y-%m-%d"
 time =
 time-alt = %H:%M:%S
 
-format-prefix = ◰
-; format-prefix-foreground = ${colors.dp12-date-darkblue}
+; format-prefix = ◰
+format-prefix = 
+format-prefix-foreground = ${colors.dp12-date-darkblue}
 label = " %date%"
-label-foreground = ${colors.dp12-date-darkblue}
+; label-foreground = ${colors.dp12-date-darkblue}
+label-foreground = ${colors.foreground-alt}
 ; label-underline= ${colors.primary}
 
 [module/volume]
