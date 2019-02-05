@@ -12,6 +12,7 @@ INSTALL_MU4E=true
 INSTALL_SPACEMACS=true
 INSTALL_SSH_ACCESS=false
 INSTALL_WALLPAPER=false
+INSTALL_ENV=false
 
 if [ ]; then
     echo "This is a comment block"
@@ -245,6 +246,14 @@ if [[ "$INSTALL_WALLPAPER" == true ]]; then
     echo "--> Installing feh and wallpaper crontab"
     sudo apt install feh
     (crontab -l ; echo '*/1 * * * * DISPLAY=:0.0 feh --bg-max "$(find ~/.wallpaper/|shuf -n1)"') | sort - | uniq - | crontab -
+fi
+
+if [[ "$INSTALL_ENV" == true ]]; then
+    echo "export LESS=-MQRi" >> ~/.profile
+    echo "export LESSOPEN='|pygmentize -g %s'" >> ~/.profile
+    echo "systemctl --user enable ssh-agent" >> ~/.profile
+    echo "systemctl --user start ssh-agent" >> ~/.profile
+    echo "setxkbmap -option ctrl:ralt_rctrl" >> ~/.profile
 fi
 
 ### MANUAL STEPS ###
