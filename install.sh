@@ -10,6 +10,7 @@ INSTALL_POLYBAR=true
 INSTALL_EMACS=true
 INSTALL_MU4E=true
 INSTALL_SPACEMACS=true
+INSTALL_CQUERY=false
 INSTALL_SSH_ACCESS=false
 INSTALL_WALLPAPER=false
 INSTALL_ENV=false
@@ -234,6 +235,18 @@ if [[ "$INSTALL_SPACEMACS" == true ]]; then
     nohup emacs &
 fi
 
+### CQUERY ###
+if [[ "$INSTALL_CQUERY" == true ]]; then
+    echo "--> Installing cquery"
+    cd
+    git clone --recursive https://github.com/cquery-project/cquery.git
+    cd cquery
+    mkdir build && cd build
+    cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+    cmake --build .
+    cmake --build . --target install
+fi
+
 ### SSH ACCESS ###
 if [[ "$INSTALL_SSH_ACCESS" == true ]]; then
     echo "--> Installing openssh-server and allowing port 22 access"
@@ -248,6 +261,7 @@ if [[ "$INSTALL_WALLPAPER" == true ]]; then
     (crontab -l ; echo '*/1 * * * * DISPLAY=:0.0 feh --bg-max "$(find ~/.wallpaper/|shuf -n1)"') | sort - | uniq - | crontab -
 fi
 
+### ENVIRONMENT ###
 if [[ "$INSTALL_ENV" == true ]]; then
     echo "export LESS=-MQRi" >> ~/.profile
     echo "export LESSOPEN='|pygmentize -g %s'" >> ~/.profile
