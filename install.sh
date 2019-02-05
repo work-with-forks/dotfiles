@@ -90,25 +90,30 @@ if [[ "$INSTALL_UTILS" == true ]]; then
     echo "--> Installing utils"
     cd
     ## ripgrep (grep replacement)
+    cd
     echo "Installing ripgrep"
     wget https://github.com/BurntSushi/ripgrep/releases/download/0.10.0/ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz
     tar xvzf ripgrep-0.10.0-x86_64-unknown-linux-musl.tar.gz
     cd ripgrep-0.10.0-x86_64-unknown-linux-musl
     sudo cp rg /usr/local/bin
     ## fzy
+    cd
     echo "Installing fzy"
     wget https://github.com/jhawthorn/fzy/releases/download/1.0/fzy-1.0.tar.gz
     tar xvzf fzy-1.0.tar.gz && cd fzy-1.0 && make && sudo cp fzy /usr/local/bin
     ## fd (find replacement)
+    cd
     echo "Installing fd"
     wget https://github.com/sharkdp/fd/releases/download/v7.1.0/fd_7.1.0_amd64.deb
     sudo dpkg -i fd_7.1.0_amd64.deb
     # exa (ls replacement)
+    cd
     echo "Installing exa"
     wget https://github.com/ogham/exa/releases/download/v0.8.0/exa-linux-x86_64-0.8.0.zip
     unzip exa-linux-x86_64-0.8.0.zip
     sudo cp exa-linux-x86_64 /usr/local/bin/exa
     # prettyping (ping replacement)
+    cd
     echo "Installing prettyping"
     wget https://github.com/denilsonsa/prettyping/raw/master/prettyping
     chmod +x prettyping && mv prettyping /usr/local/bin/prettyping
