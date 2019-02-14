@@ -9,6 +9,7 @@ alias la="$LS_EXE -a"
 alias ll="$LS_EXE -lh --git"
 alias lt="$LS_EXE -lTh --git"
 alias lla="$LS_EXE -lah --git"
+alias lld="date; $LS_EXE -l"
 alias lal="lla"
 alias lah="ls -lah"
 alias l.="ls -d .*"
@@ -146,7 +147,7 @@ alias gc~~="git checkout HEAD~~"
 alias gcb="git checkout -b"
 alias glz='git log $(git branch --sort="-authordate" | fzy)'
 alias gcz='git checkout $(git branch --sort="-authordate" | fzy)'
-alias gczr='git checkout $(git branch -r | fzy)'
+alias gczr='git checkout $(git branch -r --sort="-authordate" | fzy)'
 alias gci="git commit"
 alias gcv="git cherry -v"
 alias gcp="git cherry-pick"
