@@ -3,10 +3,14 @@
 # Same as gspr, defined in case the former has not been sourced
 git_save_pull_and_restore() {
     if ! git diff-index --quiet HEAD --; then
-        (echo "In $(basename $(git rev-parse --show-toplevel)):\n"; echo "git stash save; git pull --rebase; git stash pop") | cowsay
+        cowsay "In $(basename $(git rev-parse --show-toplevel)):
+
+git stash save; git pull --rebase; git stash pop"
         git stash save; git pull --rebase; git stash pop
     else
-        (echo "In $(basename $(git rev-parse --show-toplevel)):\n"; echo "git pull --rebase") | cowsay
+        cowsay "In $(basename $(git rev-parse --show-toplevel)):
+
+git pull --rebase"
         git pull --rebase
     fi
 }
