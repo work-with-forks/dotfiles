@@ -87,6 +87,10 @@ alias acs="sudo apt search"
 alias agr="sudo apt --purge remove"
 alias agl="dpkg --get-selections | grep -v deinstall"
 
+# Svn aliases
+alias svnstash="svn diff > "
+alias svnapply="patch -p0 < "
+
 # Git aliases
 ##  Aliases specific to the .gitconfig include:
 ##  co = checkout
