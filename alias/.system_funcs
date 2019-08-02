@@ -39,7 +39,13 @@ gsp() {
 }
 
 gla() {
-  cmd="git log --author=${1:-$(whoami)}"
+  if [ "$#" -eq 0 ]; then
+    cmd="git log --author=$(whoami)"
+  elif echo "$1" | grep -q "^-"; then
+    cmd="git log --author=$(whoami) $@"
+  else
+    cmd="git log --author=$@"
+  fi
   printf "$cmd\n\n"; eval "$cmd"
 }
 
