@@ -5,6 +5,9 @@ echorun () {
   echo "$@\n"; eval "$@"
 }
 
+fpcp () {
+  local file_path="$(pwd)/$1"
+  echo $file_path | tee >(xclip -sel clip)
 }
 
 fx() {
