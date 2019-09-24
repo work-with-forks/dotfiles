@@ -255,5 +255,9 @@ function tmux_launch {
 alias tml='tmux_launch'
 alias msd='mux start dev'
 
+# Newest directory/file, from http://zzapper.co.uk/zshtips.html
+alias -g ND='*(/om[1])'
+alias -g NF='*(.om[1])'
+
 # Uncomment to launch Tmux session on every new terminal
 # mux start dev
